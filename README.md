@@ -150,6 +150,6 @@ Dpkg es un programa que se utiliza para gestionar paquetes en Debian GNU/Linux y
 
 ## Problemas
 
-Aseprite ya no es gratuito al 100%, y no nos permite guardar, por lo que quizas necesitemos buscar una alternativa libre y gratuita, Una alternativa podria ser [LibreSprite](https://libresprite.github.io/#!/downloads) o [pixelOrama](https://godotengine.org/download/linux/).
+Aseprite ya no es gratuito al 100%, y no nos permite guardar, por lo que quizas necesitemos buscar una alternativa libre y gratuita, Una alternativa podria ser [LibreSprite](https://libresprite.github.io/#!/downloads) o [pixelOrama](https://orama-interactive.itch.io/pixelorama).
 
 [![Libre Sprite](./videoAseprite.png)](https://youtu.be/2j5A35ey3wM)
