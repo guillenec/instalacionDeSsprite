@@ -153,3 +153,95 @@ Dpkg es un programa que se utiliza para gestionar paquetes en Debian GNU/Linux y
 Aseprite ya no es gratuito al 100%, y no nos permite guardar, por lo que quizas necesitemos buscar una alternativa libre y gratuita, Una alternativa podria ser [LibreSprite](https://libresprite.github.io/#!/downloads) o [pixelOrama](https://orama-interactive.itch.io/pixelorama).
 
 [![Libre Sprite](./videoAseprite.png)](https://youtu.be/2j5A35ey3wM)
+
+## Instalamos LibreSprite
+
+accedemos a su pagina y seleccionamos alguna de las opciones disponibles para linux, en mi caso usare la AppImage, peroustedes sio quieren pueden usar flatpack.
+
+![captura pagina LibreSprite](./libreSprite1.png)
+
+### Ahora descargamos alguna de las versiones disponible para linux
+
+![libre sprite version a descargar](./libreSprite2.png)
+
+### Ejecutamos
+
+- Extraemos el archivo en algun directorio y luego le damos permisos de ejecucion:
+
+- en mi caso lo movi dentro de una carpeta en descargas con el nombre de libreSprite y lo extraje ahí.
+![extraer arcchivo](./libreSprite3.png)
+
+- luego abro una terminal dentro de la carpeta extraida
+![abrimos terminal](./libreSprite4.png)
+
+- El error que estás viendo indica que la aplicación necesita libfuse.so.2, una biblioteca esencial para ejecutar archivos AppImage. En sistemas como Huayra Linux, es posible que necesites instalar FUSE o una versión compatible para AppImages. Puedes solucionarlo con los siguientes pasos:
+
+  - Instalar libfuse2: Este paquete contiene libfuse.so.2 y es el más probable para resolver el problema.
+
+  ```bash
+  #hacemos un update
+  ✘ guillenec@guillenec-net  ~/Descargas/libreSprite/libresprite-development-linux-x86_64  sudo apt update
+
+  [sudo] contraseña para guillenec:
+  Obj:1 <https://dl.google.com/linux/chrome/deb> stable InRelease
+  Obj:2 <https://packages.microsoft.com/repos/code> stable InRelease
+  ....
+  multiverse amd64 Components [212 B]
+  Descargados 910 kB en 3s (262 kB/s)
+  Leyendo lista de paquetes... Hecho
+  Creando árbol de dependencias... Hecho
+  Leyendo la información de estado... Hecho
+  Se pueden actualizar 5 paquetes. Ejecute «apt list --upgradable» para verlos.
+  ```
+
+  -
+
+  ```bash
+  #instalamos el paquete
+  guillenec@guillenec-net  ~/Descargas/libreSprite/libresprite-development-linux-x86_64  sudo apt install libfuse2
+  Leyendo lista de paquetes... Hecho
+  Creando árbol de dependencias... Hecho
+  Leyendo la información de estado... Hecho
+  Nota, seleccionando «libfuse2t64» en lugar de «libfuse2»
+  Se instalarán los siguientes paquetes NUEVOS:
+    libfuse2t64
+  0 actualizados, 1 nuevos se instalarán, 0 para eliminar y 5 no actualizados.
+  Se necesita descargar 89,9 kB de archivos.
+  Se utilizarán 326 kB de espacio de disco adicional después de esta operación.
+  Des:1 <http://ar.archive.ubuntu.com/ubuntu> noble/universe amd64 libfuse2t64 amd64 2.9.9-8.1build1 [89,9 kB]
+  Descargados 89,9 kB en 1s (62,7 kB/s)  
+  Seleccionando el paquete libfuse2t64:amd64 previamente no seleccionado.
+  (Leyendo la base de datos ... 258583 ficheros o directorios instalados actualmen
+  te.)
+  Preparando para desempaquetar .../libfuse2t64_2.9.9-8.1build1_amd64.deb ...
+  Desempaquetando libfuse2t64:amd64 (2.9.9-8.1build1) ...
+  Configurando libfuse2t64:amd64 (2.9.9-8.1build1) ...
+  Procesando disparadores para libc-bin (2.39-0ubuntu8.3) ...
+   guillenec@guillenec-net  ~/Descargas/libreSprite/libresprite-development-linux-x86_64  ./LibreSprite-x86_64.AppImage --appimage-extract
+
+  squashfs-root/.DirIcon
+  squashfs-root/AppRun
+  squashfs-root/libresprite.desktop
+  ....
+  squashfs-root/usr/lib/libz.so.1
+  squashfs-root/usr/lib/libzstd.so.1
+  ```
+
+  ```bash
+  #listamos
+   guillenec@guillenec-net  ~/Descargas/libreSprite/libresprite-development-linux-x86_64  ls
+  LibreSprite-x86_64.AppImage  squashfs-root
+  ```
+
+### Ejecutamos el programa
+
+- Desde la terminal
+
+  ```bash
+  #ejecutamos
+   guillenec@guillenec-net  ~/Descargas/libreSprite/libresprite-development-linux-x86_64  cd squashfs-root
+   guillenec@guillenec-net  ~/Descargas/libreSprite/libresprite-development-linux-x86_64/squashfs-root  ./AppRun
+  ```
+
+- Desde la carpeta con doble clic (es lo mismo)
+![ejecutamos con 2ble clic](./libreSprite5.png)
